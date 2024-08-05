@@ -1,0 +1,33 @@
+npm init -y
+
+npm install typescript ts-node nodemon -D
+
+//tsconfig.json 파일 생성
+npx tsc --init
+
+tsconfig.json에 내용 추가
+
+package.json에 "type": "module", 추가
+
+npm install express
+
+npm i --save-dev @types/express
+
+package.json에 아래 추가
+scripts": {
+    "dev": "nodemon --watch backend/src --exec ts-node backend/src/index.ts"
+  }, 
+
+  npm install prisma @prisma/client
+
+  /backend>npx prisma init
+
+  npm install dotenv
+
+//DB 생성
+  \backend>npx prisma db push
+생성 후 neon에 가서 확인
+
+npm install jsonwebtoken cookie-parser bcryptjs
+
+npm i --save-dev @types/bcryptjs
