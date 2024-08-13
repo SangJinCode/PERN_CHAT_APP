@@ -39,7 +39,7 @@ model Conversation {
   messagesIds String[]
   messages Message[]
 }
-
+//@relation은 두 모델관 관계를 설정(FK)
 model Message{
   id String @id @default(cuid())
   conversationId String
@@ -51,6 +51,7 @@ model Message{
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+//enum은 가능한 값을 지정
 enum Gender {
   male
   female

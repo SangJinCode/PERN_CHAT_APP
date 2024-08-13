@@ -5,16 +5,22 @@ import messageRoutes from "./routes/message.routes.js"
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
+
 dotenv.config()
 
+const PORT = process.env.PORT || 5001
+
 const app = express();
+
 
 app.use(cookieParser()); //for parsing cookies
 app.use(express.json()); // for parsing application/json
 
+
 app.use("/api/auth", authRoutes)
 app.use("/api/messages", messageRoutes)
 
-app.listen(5000, () => {
-    console.log("Sever is running on port 5000")
+app.listen(PORT, () => {
+    console.log("Sever is running on port " + PORT)
 });
+ 

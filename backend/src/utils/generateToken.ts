@@ -11,7 +11,7 @@ const generateToken = (userId:string, res:Response) => {
         sameSite: "strict", //CSRF attack cross-site request forgery
         secure: process.env.NODE_ENV !== "development" //HTTPS
     })
-    return token
+    return token;
 }
 
 export default generateToken;

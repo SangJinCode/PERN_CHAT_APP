@@ -66,7 +66,8 @@ export const login = async (req:Request, res:Response) => {
         const { username, password } = req.body;
 
         //SQL query to find the same username
-        const user = await prisma.user.findUnique({where: {username}});
+        const user = await prisma.user.findUnique({ where: {username }});
+
         if (!user) {
             return res.status(400).json({ error: "Invalid username"})
         }
@@ -106,6 +107,7 @@ export const logout = async (req:Request, res:Response) => {
 };
 
 export const getMe = async(req: Request, res: Response) => {
+    console.log("req in get():",req)
     try {
         //SQL query to find the same username
         const user = await prisma.user.findUnique({where: {id: req.user.id}});
@@ -123,4 +125,4 @@ export const getMe = async(req: Request, res: Response) => {
         console.log("Error in getMe controller", error.message);
         res.status(500).json({error: "Internal Server Error"})
     }
-}
+};
